@@ -1,0 +1,11 @@
+.label-password {
+    padding-left: 9px;
+}
+.div-input {
+    display: flex;
+}
+.eye-icon {
+    padding-top: 7px;
+    height: 25px;
+    width: 25px;
+}

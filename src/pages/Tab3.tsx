@@ -1,13 +1,18 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import {IonContent, IonHeader, IonInput, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonIcon} from '@ionic/react';
+import {eyeOutline, eyeOffOutline} from "ionicons/icons";
 import ExploreContainer from '../components/ExploreContainer';
-import './Tab3.css';
+import './style/Tab3.css';
+import {useState} from "react";
+//import anything = jasmine.anything;
 
 const Tab3: React.FC = () => {
+  const [passwordType, setPasswordType] = useState<any>("password");
+  const [eye, setEye] = useState(eyeOutline)
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 3</IonTitle>
+          <IonTitle className={'test'}>Parametre</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -16,7 +21,17 @@ const Tab3: React.FC = () => {
             <IonTitle size="large">Tab 3</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 3 page" />
+        <IonList >
+          <IonLabel className={'label-password'} position={"fixed"}>Mot de passe Principal</IonLabel>
+          <div className={"div-input"}>
+            <IonInput className={"input-password"} type={passwordType} placeholder={'Password'}></IonInput>
+            <IonIcon className={"eye-icon"} icon={eye} onClick={() => {
+              passwordType === "password" ? setPasswordType("text") : setPasswordType("password");
+              passwordType === "text" ? setEye(eyeOutline) : setEye(eyeOffOutline);
+            }}/>
+          </div>
+        </IonList>
+        <ExploreContainer name="Parametre page" />
       </IonContent>
     </IonPage>
   );

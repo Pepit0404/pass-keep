@@ -1,0 +1,7 @@
+.tab-icon {
+    color: var(--ion-color-myprimary-tint);
+
+    &.tab-selected {
+        color: var(--ion-color-mysecondary);
+    }
+}

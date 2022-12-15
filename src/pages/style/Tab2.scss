@@ -1,0 +1,26 @@
+.flexbox {
+  display: flex;
+  &.test {
+    justify-content: flex-start;
+    display: flex;
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-top: 18px;
+
+    .random-pass {
+      flex: 1 1 auto;
+      --padding-start: 0px;
+      --border-width: 0 0 3px 0;
+      font-size: 24px;
+      color: var(--ion-color-myprimary-contrast);
+    }
+
+    .icon {
+      margin-top: 10px;
+      color: var(--ion-color-myprimary-tint);
+      width: 35px;
+      height: 35px;
+      padding: 0 4.5px 0 4.5px;
+    }
+  }
+}
