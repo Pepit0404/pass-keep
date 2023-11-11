@@ -4,24 +4,31 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonButton,
-  useIonAlert
+  IonIcon,
+  IonFab,
+  IonFabButton,
+  IonItem, IonLabel, IonList
 } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './style/Tab1.css';
-import {construct} from "ionicons/icons";
-import {render} from "@testing-library/react";
-import {useState} from "react";
+import {search, heart, heartDislike, ellipsisVertical, add} from 'ionicons/icons';
+import './style/Tab1.scss';
+import {Encrypt, Decrypt} from '../components/cryptHelp';
+import {Machin} from '../components/StorageHelp';
+
+const Bdd = new Machin();
+Bdd.SetIn("Test", "toujours test")
+console.log(Bdd.GetIn("Test"))
+const liste = Bdd.listeAll();
 
 const Tab1: React.FC = () => {
-  const [presentAlert] = useIonAlert();
-  const [test, setTest] = useState('');
-
+  console.log(Bdd.GetIn("Test"))
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Mot de passe</IonTitle>
+          <IonIcon slot='end' icon={search} className={'icon-head'}></IonIcon>
+          <IonIcon slot='end' icon={heart} className={'icon-head'}></IonIcon>
+          <IonIcon slot='end' icon={ellipsisVertical} className={'icon-head'}></IonIcon>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -30,7 +37,19 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">Tab 1</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Mot de passe page" />
+        <IonList>
+          <IonItem>
+            <IonLabel>{liste[0]}</IonLabel>
+          </IonItem>
+          <IonItem>
+            <IonLabel>{liste[1]}</IonLabel>
+          </IonItem>
+        </IonList>
+        <IonFab  slot={"fixed"} vertical={"bottom"} horizontal={"end"}>
+          <IonFabButton className={'button-add'}>
+            <IonIcon icon={add}></IonIcon>
+          </IonFabButton>
+        </IonFab>
       </IonContent>
     </IonPage>
   );

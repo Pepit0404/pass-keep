@@ -1,6 +1,6 @@
 .flexbox {
   display: flex;
-  &.test {
+  &.pass-div {
     justify-content: flex-start;
     display: flex;
     margin-left: 18px;
@@ -13,14 +13,76 @@
       --border-width: 0 0 3px 0;
       font-size: 24px;
       color: var(--ion-color-myprimary-contrast);
+
+      .native-input {
+        opacity: 1;
+      }
     }
 
     .icon {
       margin-top: 10px;
-      color: var(--ion-color-myprimary-tint);
+      color: #ffffff;
       width: 35px;
       height: 35px;
       padding: 0 4.5px 0 4.5px;
+
+      &:active {
+        animation: buttonEffect 0.2s linear;
+      }
+      @keyframes buttonEffect {
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+
+      }
     }
+  }
+}
+
+.copyMessage {
+    transform: translateY(-56px) !important;
+}
+
+ion-range{
+  margin-bottom: 15px;
+  --bar-height: 6px;
+  --bar-background: var(--ion-color-mysecondary-shade-more);//var(--ion-color-secondary-shade-more);
+  --bar-background-active: var(--ion-color-mysecondary);//var(--ion-color-mysecondary-shade);
+  --bar-border-radius: 6px;
+  --knob-size: 32px;
+  --knob-background: var(--ion-color-myprimary-tint);
+  --pin-background: transparent;
+  font-size: 23px;
+}
+ion-range::part(pin) {
+  transform: translate3d(0px, 40px, 0px) scale(1);
+}
+
+.item-toggle {
+  color: #ffffff;
+  font-size: 24px;
+
+  ion-toggle {
+    height: 20px;
+    width: 52px;
+
+    padding: 12px;
+
+    --background: var(--ion-color-myprimary-tint);
+    --background-checked: var(--ion-color-mysecondary-shade-more);
+
+    --handle-background: #ffffff;
+    --handle-background-checked: var(--ion-color-mysecondary);
+
+    --handle-width: 30px;
+    --handle-height: 30px;
+    --handle-max-height: auto;
+
+    --handle-box-shadow: none;
+    overflow: visible;
+    contain: none;
   }
 }

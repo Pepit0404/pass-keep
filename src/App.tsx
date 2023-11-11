@@ -72,7 +72,7 @@ const App: React.FC = () => (
           </IonTabButton>
           <IonTabButton className={"tab-icon"} tab="tab3" href="/tab3">
             <IonIcon icon={settingsSharp} />
-            <IonLabel>Paramétre</IonLabel>
+            <IonLabel>Paramètre</IonLabel>
           </IonTabButton>
           <IonTabButton className={"tab-icon"} tab="tab4" href="/tab4">
             <IonIcon icon={build} />

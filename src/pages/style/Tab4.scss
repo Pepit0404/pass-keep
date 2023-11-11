@@ -1,0 +1,19 @@
+.flex-box {
+  display: flex;
+  font-size: 45px;
+
+  .input {
+    font-size: 26px;
+  }
+
+  .label-input {
+    font-size: 16px;
+    color: var(--ion-color-myprimary-tint)
+  }
+
+  .icon {
+    height: 50px;
+    width:  50px;
+    color: var(--ion-color-myprimary-tint)
+  }
+}
